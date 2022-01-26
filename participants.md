@@ -14,4 +14,4 @@
 
 ## Lørdag - Søndag
 
-- Evert
+- Edvard ( Emils Kollega )
