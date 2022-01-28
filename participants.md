@@ -10,6 +10,8 @@
 - Morten
 - Heso
 - Kenneth 
+- Gadegaard
+- Mike
 
 ## Fredag - Lørdag
 
