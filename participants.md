@@ -12,6 +12,8 @@
 - Kenneth 
 - Gadegaard
 - Mike
+- Alexander
+- Jannik
 
 ## Fredag - Lørdag
 
