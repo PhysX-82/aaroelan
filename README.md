@@ -23,11 +23,14 @@ undskyldninger godtages ikke.
 Hvad der er på menuen.
 
 ### Fredag
-- TBD
+- Morgenmad - Møllehjul
+- Aftensmad - Hotdogs
 
-### Lørdag
-- TBD
+### Lørdag 
+- Morgenmad - Møllehjul
+- Aftensmad - Lasagne
+
 
 ### Søndag
-- TBD
+- Morgenmad - Møllehjul
 
