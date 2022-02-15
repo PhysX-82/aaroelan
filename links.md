@@ -12,3 +12,4 @@
 - pfSense - http://192.168.200.1
 - Lancache dns - 192.168.200.10
 - Monitoring - 192.168.200.11
+- nasTY - 192.168.200.20
