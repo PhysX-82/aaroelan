@@ -12,6 +12,7 @@
 - Gadegaard
 - Mike
 - Andreas
+- Tj00
 
 ## Fredag - Lørdag
 
