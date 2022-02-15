@@ -9,11 +9,9 @@
 - Marc "Hoax"
 - Morten
 - Heso
-- Kenneth 
 - Gadegaard
 - Mike
-- Alexander
-- Jannik
+- Andreas
 
 ## Fredag - Lørdag
 
