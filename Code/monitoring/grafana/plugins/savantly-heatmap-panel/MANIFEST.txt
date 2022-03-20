@@ -1,0 +1,50 @@
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+{
+  "manifestVersion": "2.0.0",
+  "signatureType": "community",
+  "signedByOrg": "grafana",
+  "signedByOrgName": "Grafana Labs",
+  "plugin": "savantly-heatmap-panel",
+  "version": "0.2.1",
+  "time": 1622741066287,
+  "keyId": "7e4d0c6a708866e7",
+  "files": {
+    "heatmapEditor.html": "80c1afb1c21b11b22eeadbf68062a3507707fae8bea85efa8a52341f25b569a6",
+    "displayEditor.html": "c8929259acfee43228cdbb1e61bc2a84bb4fa8fef30141ac4d5bc2c89902cdda",
+    "properties.js.map": "7d5d976495f563f4cb85ca4770d2da534a97b9b9a70c8da621c3b94d83bba2cf",
+    "css/heatmap.css": "3c4418e6b56f675f2004a687cc0f9594240f30851dbeb926e74ded6435b085e0",
+    "css/heatmap.css.map": "6961f3953262b183ef13278b0dc4d871fafb67c4ea4477f73f52b06e2242c0dc",
+    "module.html": "964b4e25a8a48d47b4b90fb85d7cca816cd042f3337621ad5d10f0a0fb34c79e",
+    "properties.js": "0939804110c3dfb12a9649fec6001a8c403b9a9a99043f8b224d1b8de46b3920",
+    "module.js.map": "e50ce84751c196e9710211d8c28327f581ee2cdfef882fe9052fb85a1fb5c501",
+    "plugin.json": "7dd0dbe6415501b7a7ba8233a0689e57e6f72764551532132fee90d85d4bc6de",
+    "libs/d3plus/d3plus.min.js": "c381e5bcfe540caa9267e946f4bb7c300f1e8f2d04453e248cf4f48a201cad7a",
+    "libs/d3plus/d3plus.js": "563ce3c83439cf43a0a98292cfe7774117aee7dbafff65c098a99a31bce7b8c7",
+    "libs/d3plus/d3plus.full.js": "892243f96b249ca8b11834820d60a03f0f8471ae15cddea4d202c1c4e8a49f5d",
+    "libs/d3plus/d3plus.full.min.js": "a1fa18301def3cf11f1e69d4547a9943b4b636ccac0cba3881184b8f258cd20b",
+    "libs/d3/d3.min.js": "a762ca217f7dc1d7eace1d35a067389856810b70e23487082f08bc01f54cdbd4",
+    "libs/d3/d3.js": "ae9eabdd39bc4eb53905ba27d2b6a3ea56e165147681d9895c712d6d14326478",
+    "README.md": "d7033e99aa8af059d927de8ca1e46e2969ac7d509a42e71c5b1c986a98866b1c",
+    "img/timestamp_data.PNG": "f32d5e3c3525c46bdd6ebedb7eaf3035eff2b735851ec1305d7b6e2305a5a22c",
+    "img/icn-heatmap-panel.svg": "f60466aae62bab47677f610ee2d3f26064b0da36d9769ca3be72b68c9246408f",
+    "img/heatmap.PNG": "edb73677190e9e806606ab5774ca34c0a30bbdae81c3ce065562c18f5e279a1d",
+    "module.js": "62068116ddde618e22a98a415ab9ff9c6f9b068ddb461ce147fe5e18ba16a88b",
+    "heatmapControl.js": "0902a5705ebdd2d0346fbd555a7d904fae32afcf751c099e69567c65a0c4e693",
+    "series_overrides_heatmap_ctrl.js": "b440b496d2db5e49d7dba0c4c999742bd94e6fcb0d80c85ee0664042ee25b24f",
+    "heatmapControl.js.map": "50cb635ab209e24ce1064092384146218850365315cbf3434b5d7f8817e041a6",
+    "series_overrides_heatmap_ctrl.js.map": "d9f57bfc99a551760c28c92d32fac4182cc301496d76dfb444d2c4a311012cb6"
+  }
+}
+-----BEGIN PGP SIGNATURE-----
+Version: OpenPGP.js v4.10.1
+Comment: https://openpgpjs.org
+
+wqEEARMKAAYFAmC5EEoACgkQfk0ManCIZud0ogIHdc07O8OH6oP+AEbMzuUn
+7GeNGGuPrwR+tVnOqxvEtGpnedOStN7p+LvCfpGF9ZjyIsrIm3aHx07HY66A
+8Y8XWq0CCQHxrNcyWr6wB93aucj79Glsho3gSc2Yam7Jk2h+vpve2noKpHFP
+WKVU0AsuROf/5+cmm27rkCorB2jLq5UqjDihjQ==
+=x7EU
+-----END PGP SIGNATURE-----

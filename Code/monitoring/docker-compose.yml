@@ -1,0 +1,172 @@
+version: '3.8'
+
+services:
+  node-exporter:
+    image: prom/node-exporter:latest
+    container_name: node-exporter
+    restart: unless-stopped
+    volumes:
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
+      - /:/rootfs:ro
+    command:
+      - '--path.procfs=/host/proc'
+      - '--path.rootfs=/rootfs'
+      - '--path.sysfs=/host/sys'
+      - '--collector.filesystem.mount-points-exclude=^/(sys|proc|dev|host|etc)($$|/)'
+    expose:
+      - 9100
+
+
+  influxdb:
+    image: influxdb:1.7
+    restart: unless-stopped
+    ports:
+      - '8086:8086'
+    volumes:
+      - ./influxdb/:/var/lib/influxdb
+    environment:
+      - INFLUXDB_DB=db0
+      - INFLUXDB_ADMIN_USER="admin"
+      - INFLUXDB_ADMIN_PASSWORD="admin123"
+
+  prometheus:
+    image: prom/prometheus:latest
+    user: root
+    container_name: prometheus
+    restart: unless-stopped
+    ports:
+      - 9090:9090
+    volumes:
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+      - ./prometheus:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/etc/prometheus/console_libraries'
+      - '--web.console.templates=/etc/prometheus/consoles'
+      - '--web.enable-lifecycle'
+    expose:
+      - 9090
+
+  grafana:
+    image: grafana/grafana
+    user: root
+    restart: unless-stopped
+    ports:
+      - 3000:3000
+    environment:
+      - GF_INSTALL_PLUGINS=grafana-piechart-panel,grafana-worldmap-panel,savantly-heatmap-panel
+    volumes:
+      - ./grafana/:/var/lib/grafana
+
+
+  mongodb:
+    image: mongo:4.2
+    restart: unless-stopped
+    volumes:
+      - mongo_data:/data/db
+
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.15.2
+#    user: root
+    mem_limit: 4g
+    restart: unless-stopped
+    volumes:
+      - es_data:/usr/share/elasticsearch/data
+    env_file:
+      - ./elasticsearch.env
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    ports:
+      - 9200:9200
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:7.15.2
+#    entrypoint: ["echo", "Service Kibana disabled"]
+    env_file:
+      - kibana.env
+    restart: unless-stopped
+    depends_on:
+      - elasticsearch
+    ports:
+      - 5601:5601
+
+  cerebro:
+    image: lmenezes/cerebro
+#    entrypoint: ["echo", "Service cerebro disabled"]
+    ports:
+      - 9001:9000
+    links:
+      - elasticsearch
+    depends_on:
+      - elasticsearch
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "100M"
+
+
+  graylog:
+    build:
+      context: ./graylog/.
+    restart: unless-stopped
+    user: root
+    volumes:
+      - graylog_journal:/usr/share/graylog/data/journal
+      - ./graylog/service-names-port-numbers.csv:/etc/graylog/server/service-names-port-numbers.csv
+    env_file:
+      - ./graylog.env
+    entrypoint: /usr/bin/tini -- wait-for-it elasticsearch:9200 --  /docker-entrypoint.sh
+    links:
+      - mongodb:mongo
+      - elasticsearch
+    restart: always
+    depends_on:
+      - mongodb
+      - elasticsearch
+    ports:
+      # Netflow
+      - 2055:2055/udp
+      # Syslog Feed
+      - 5442:5442/udp
+      # Graylog web interface and REST API
+      - 9000:9000
+      # Syslog TCP
+      - 1514:1514
+      # Syslog UDP
+      - 1514:1514/udp
+      # GELF TCP
+      - 12201:12201
+      # GELF UDP
+      - 12201:12201/udp
+
+  logstash:
+    image: docker.elastic.co/logstash/logstash:7.15.2
+    restart: unless-stopped
+    volumes:
+      - type: bind
+        source: ./logstash/logstash.yml
+        target: /usr/share/logstash/config/logstash.yml
+        read_only: true
+      - type: bind
+        source: ./logstash/logstash.conf
+        target: /usr/share/logstash/pipeline/logstash.conf
+        read_only: true
+    environment:
+      LS_JAVA_OPTS: "-Xmx256m -Xms256m"
+    depends_on:
+      - elasticsearch
+    ports:
+      - 5044:5044 
+
+volumes:
+  mongo_data:
+    driver: local
+  es_data:
+    driver: local
+  graylog_journal:
+    driver: local
