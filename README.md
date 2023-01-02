@@ -1,6 +1,6 @@
 # Aarø Lan 
 
-Weeb lan som afholdes af Aarø's unge human beings!
+Weeb lan som afholdes af Aarø's human beings!
 
 **NÆSTE LAN 6-7 Januar 2023**
 
