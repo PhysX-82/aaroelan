@@ -16,9 +16,9 @@ Du kan se tilmeldingslisten "participants" og skrive dig selv på og lave et pul
 ## Mad
 
 Hvad der er på menuen.
+Der vil være toast til rådighed til de mellemsultne
 
 ### Fredag
-- Morgenmad - Møllehjul
 - Aftensmad - Hotdogs
 
 ### Lørdag 
