@@ -2,7 +2,7 @@
 
 Weeb lan som afholdes af Aarø's unge human beings!
 
-**NÆSTE LAN 18-20 Februar 2022 - Vi arbejder på måske at kunne starte op torsdag så vi lige har en dag mere :-)**
+**NÆSTE LAN 6-7 Januar 2023**
 
 Discord server for lan:
 > https://discord.gg/3fMdYe2GgH
@@ -12,11 +12,6 @@ Prisen for en weekend plejer at ligge på omkring en flad 50'er alt efter om der
 ## Tilmelding
 Du kan se tilmeldingslisten "participants" og skrive dig selv på og lave et pull request så godkender vi!
 
-
-Ellers skriv på Discord "#offtopic" eller "#member-chat" kanal
-
-Eftersom folk ikke dukkede op og der var købt mad må der simpelthen laves bindene tilmelding. Dårlige 
-undskyldninger godtages ikke.
 
 ## Mad
 
